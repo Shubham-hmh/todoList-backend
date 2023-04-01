@@ -1,8 +1,6 @@
-
 const express = require("express")
 const mongoose = require("mongoose")
 const Todo = require("./model/Todo")
-// const ytdl=require("ytdl-core")
 const dotenv = require("dotenv")
 const app = express()
 const port = 5000
@@ -20,23 +18,6 @@ mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log(err);
 })
 
-// app.get("/download",async(req,res)=>{
-//     try{
-//         const url=req.query.url;
-//         const videoId=await ytdl.getURLVideoID(url);
-//         const metaInfo =await ytdl.getInfo(url);
-
-//         let data ={
-//             url:"https://www.youtube.com/embed/"+videoId,
-//             info: metaInfo.formats,
-//         }
-
-//         return res.send(data);
-//     }
-//     catch(error){
-//         return res.status(500);
-//     }
-// })
 
 
 

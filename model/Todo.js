@@ -6,6 +6,7 @@ const TodoSchema = new mongoose.Schema({
     description: { type: String, required: true },
     status: { type: String, required: true },
     dueDate: { type: String },
+    done:{type:Boolean ,default:false},
     createdAt:{
         type:Date,
         default:Date.now
