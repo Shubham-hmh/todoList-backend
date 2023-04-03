@@ -21,15 +21,15 @@ router.post("/", async (req, res) => {
 //update 
 
 router.patch("/updateUser/:id", async (req, res) => {
+    const {id}=req.params;
+
     try {
-        const updateTodo = await Todo.findByIdAndUpdate(req.params.id, {
-            $set:req.body
-        }, { new: true }
-        );
-        res.json(updateTodo);
-    }
-    catch(err){
-        res.status(500).json(err);
+        const newBrand =await Todo.findByIdAndUpdate(id,req.body,{new:true});
+        res.json(newBrand);
+        
+    } catch (error) {
+        throw new Error(error);
+        
     }
 })
 
